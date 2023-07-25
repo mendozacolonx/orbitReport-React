@@ -1,21 +1,21 @@
 import satData from "./satData.js";
-import filterByType from "../App.js";
-import setSat from "../App.js";
-import displaySats from "../App.js";
+// import filterByType from "../App.js";
+// import setSat from "../App.js";
+// import displaySats from "../App.js";
 import "./styling.css";
 
 
-const Buttons = () => {
+const Buttons = ({filterByType, setSat, displaySats}) => {
   return (
-    <div>
+    <div className = 'flex-container'>
       {displaySats.map((sat, id) => {
         return (
-          <button className = {flex-container} onClick={() => filterByType(sat)} key={id}>
+          <button  onClick={() => filterByType(sat)} key={id}>
             {sat} Orbit
           </button>
         );
       })}
-      <button onClick={() => setSat(satData)}>
+      <button onClick = {() => setSat(satData)}>
         All Orbits
       </button>
     </div>
